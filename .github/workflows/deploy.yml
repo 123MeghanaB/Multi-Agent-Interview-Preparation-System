@@ -1,0 +1,15 @@
+name: Deploy to Hugging Face Space
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: huggingface/hub-action@v1
+        with:
+          repo: spaces/meghana123456/Multi-Agent-Interview-Preparation-System
+          token: ${{ secrets.HF_TOKEN }}
